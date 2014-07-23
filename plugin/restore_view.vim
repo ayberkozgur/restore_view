@@ -1,30 +1,7 @@
 "          FILE: restore_view.vim
+"       Version: 1.2
 "      Language: vim script
 "    Maintainer: Yichao Zhou (broken.zhou AT gmail dot com)
-"       Created: 2012-02-27 16:12:12
-" Last Modified: 2012 Apr 18 14:06:11
-"   Description:
-"       This is a simple script to autosave cursor position and fold
-"       information using vim's mkview.  Although you can easily do this job by
-"       just add serveral line to {.,_}vimrc, write a script plugin can make it
-"       more clean and nice.  We assume you use a new enough Vim to enjoy
-"       these feature. Hope you love it:)
-"
-"       Views will be saved when you save/write a file or EXIT VIM.
-"
-" Suggested Setting:
-"       Please put them in you vimrc file.
-"           set viewoptions=cursor,folds,slash,unix
-"
-"       Set it in a plugin file looks dirty to me.  So you'd better do it your
-"       self.  This only keywords not in viewoptions is "options". I believe it
-"       does not belong to a view.  If you think you need it, feel free to
-"       put it in.  If you do not want views of some files to be saved, please
-"       set g:loaded_restore_view. The longer time you use, the bigger view
-"       folder you will have.  So if you use UNIX environment, you may need to
-"       use cron to do some clean job.
-"
-"       Most of code is from wiki.
 
 if exists("g:loaded_restore_view")
     finish
@@ -57,7 +34,7 @@ endfunction
 augroup AutoView
     autocmd!
     " Autosave & Load Views.
-    autocmd BufWritePre ?* if s:Check()          | silent! mkview   | endif
-    autocmd TabLeave,BufWinLeave ?* if s:Check() | silent! mkview   | endif
-    autocmd TabEnter,BufWinEnter ?* if s:Check() | silent! loadview | endif
+    autocmd BufWritePre ?* if s:Check() | silent! mkview   | endif
+    autocmd BufWinLeave ?* if s:Check() | silent! mkview   | endif
+    autocmd BufWinEnter ?* if s:Check() | silent! loadview | endif
 augroup END

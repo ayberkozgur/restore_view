@@ -1,4 +1,9 @@
- Description:
+restore_view
+========
+
+This is a fork of version 1.2 of the restore_view plugin by Yichao Zhou.
+
+Description:
       This is a simple script to autosave cursor position and fold
       information using vim's mkview.  Although you can easily do this job by
       just add serveral line to {.,_}vimrc, write a script plugin can make it
