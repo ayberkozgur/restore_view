@@ -30,19 +30,16 @@ if exists("g:loaded_restore_view")
 endif
 let g:loaded_restore_view = 1
 
-if &diff
-    finish
-endif
-
 if !exists("g:skipview_files")
     let g:skipview_files = []
 endif
 
 function! s:MakeViewCheck()
-    if &buftype != '' | return 0 | endif
+    if &l:diff | return 0 | endif
+    if &l:buftype != '' | return 0 | endif
     if expand('%') =~ '\[.*\]' | return 0 | endif
     if empty(glob(expand('%:p'))) | return 0 | endif
-    if &modifiable == 0 | return 0 | endif
+    if &l:modifiable == 0 | return 0 | endif
     if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
     if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
 

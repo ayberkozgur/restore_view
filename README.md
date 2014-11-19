@@ -1,4 +1,4 @@
-restore_view
+*restore_view*
 ========
 
 This is a fork of version 1.2 of the restore_view plugin by Yichao Zhou.
@@ -25,3 +25,6 @@ Suggested Setting:
       use cron to do some clean job.
 
       Most of code is from wiki.
+
+<!--- vim:tw=78:ts=8:ft=markdown:norl:
+  -->
