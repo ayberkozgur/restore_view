@@ -1,6 +1,10 @@
 *restore_view*
 ========
 
+NOTE: This fork is no longer maintained as version 1.3 of the restore_view
+plugin is fully compatible with the FastFold plugin and includes all
+modifications of this fork.
+
 This is a fork of version 1.2 of the restore_view plugin by Yichao Zhou.
 
 Description:
