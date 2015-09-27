@@ -58,5 +58,5 @@ augroup AutoView
     " Autosave & Load Views.
     " Adapted to FastFold.vim: BufWritePre instead of -Post
     autocmd BufWritePre,BufWinLeave ?* if s:MakeViewCheck() | silent! mkview | endif
-    autocmd BufWinEnter ?* if s:MakeViewCheck() | silent! loadview | endif
+    autocmd BufReadPost ?* if s:MakeViewCheck() | silent! loadview | endif
 augroup END
